@@ -4,33 +4,33 @@ namespace Task_31
     {
         static void Main(string[] args)
         {
-            string userImput;
+            string userInput = "";
 
-            NumberConversion(out userImput);
+            ReadInt(userInput);
         }
 
-        static int NumberConversion(out string imput)
+        static int ReadInt(string input)
         {
-            imput = "";
-            int numberInt = 0;
+            input = "";
+            int number = 0;
 
             Console.Write("Введите число для конвертации: ");
 
-            while (imput != null)
+            while (input != null)
             {
-                imput = Console.ReadLine();
+                input = Console.ReadLine();
 
-                if (!int.TryParse(imput, out numberInt))
+                if (!int.TryParse(input, out number))
                 {
-                    Console.WriteLine("\nКонвертация не удалась, введите число повторно:");
+                    Console.WriteLine("\nКонвертация не удалась, введите число повторно: ");
                 }
                 else
                 {
-                    Console.WriteLine($"\nКонвертация прошла УСПЕШНО! Ваше число {numberInt}");
+                    Console.WriteLine($"\nКонвертация прошла УСПЕШНО! Ваше число {number}");
                     break;
                 }
             }
-            return numberInt;
+            return number;
         }
     }
 }
