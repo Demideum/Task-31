@@ -1,0 +1,36 @@
+namespace Task_31
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string userImput;
+
+            NumberConversion(out userImput);
+        }
+
+        static int NumberConversion(out string imput)
+        {
+            imput = "";
+            int numberInt = 0;
+
+            Console.Write("Введите число для конвертации: ");
+
+            while (imput != null)
+            {
+                imput = Console.ReadLine();
+
+                if (!int.TryParse(imput, out numberInt))
+                {
+                    Console.WriteLine("\nКонвертация не удалась, введите число повторно:");
+                }
+                else
+                {
+                    Console.WriteLine($"\nКонвертация прошла УСПЕШНО! Ваше число {numberInt}");
+                    break;
+                }
+            }
+            return numberInt;
+        }
+    }
+}
